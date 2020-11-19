@@ -1,0 +1,20 @@
+{
+  "name": "video_converter",
+  "productName": "Video Converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . --icon=dist/img/icon.ico"
+  },
+  "author": "W1ckedD",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^11.0.1",
+    "electron-packager": "^15.1.0"
+  },
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}

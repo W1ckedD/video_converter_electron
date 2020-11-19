@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+        <title>Video Converter</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">Video Converter</h1>
+            <div class="d-flex flex-column align-items-center">
+                <video controls width="600" height="400">
+                    <source id="source" type="video/mp4" />
+                </video>
+                <div class="custom-file mt-3">
+                    <input
+                        type="file"
+                        class="custom-file-input"
+                        id="customFile"
+                    />
+                    <label class="custom-file-label" for="customFile"
+                        >Choose file</label
+                    >
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between mt-5">
+                <div class="">
+                    <h4>audio volume</h4>
+                    <div class="row">
+                        <div class="form-check col">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="volume"
+                                id="0.25"
+                                value="0.25"
+                            />
+                            <label class="form-check-label" for="0.25">
+                                0.25x
+                            </label>
+                        </div>
+                        <div class="form-check col">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="volume"
+                                id="0.5"
+                                value="0.5"
+                            />
+                            <label class="form-check-label" for="0.5">
+                                0.5x
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-check col">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="volume"
+                                id="1"
+                                value="1"
+                                checked
+                            />
+                            <label class="form-check-label" for="1"> 1x </label>
+                        </div>
+                        <div class="form-check col">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="volume"
+                                id="1.5"
+                                value="1.5"
+                            />
+                            <label class="form-check-label" for="1.5">
+                                1.5x
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-check col">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="volume"
+                                id="2"
+                                value="2"
+                            />
+                            <label class="form-check-label" for="2"> 2x </label>
+                        </div>
+                        <div class="form-check col">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="volume"
+                                id="3"
+                                value="3"
+                            />
+                            <label class="form-check-label" for="3"> 3x </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-check col">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="volume"
+                                id="4"
+                                value="4"
+                            />
+                            <label class="form-check-label" for="4"> 4x </label>
+                        </div>
+                        <div class="form-check col">
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="volume"
+                                id="5"
+                                value="5"
+                            />
+                            <label class="form-check-label" for="5"> 5x </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column justify-content-between">
+                    <h4>video encoding</h4>
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="video-codecs"
+                            id="libx264"
+                            value="libx264"
+                            checked
+                        />
+                        <label class="form-check-label" for="libx264">
+                            libx264
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="video-codecs"
+                            id="libx265"
+                            value="libx265"
+                        />
+                        <label class="form-check-label" for="libx265">
+                            libx265
+                        </label>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column justify-content-between">
+                    <h4>audio encoding</h4>
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="audio-codecs"
+                            id="aac"
+                            value="aac"
+                            checked
+                        />
+                        <label class="form-check-label" for="aac"> aac </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="audio-codecs"
+                            id="libfdk_aac"
+                            value="libfdk_aac"
+                        />
+                        <label class="form-check-label" for="libfdk_aac">
+                            libfdk_aac
+                        </label>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column justify-content-between">
+                    <h4>format</h4>
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="format"
+                            id="format-mp4"
+                            value="mp4"
+                            checked
+                        />
+                        <label class="form-check-label" for="format-mp4">
+                            mp4
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="format"
+                            id="format-mkv"
+                            value="mkv"
+                        />
+                        <label class="form-check-label" for="format-mkv">
+                            mkv
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input
+                            class="form-check-input"
+                            type="radio"
+                            name="format"
+                            id="format-avi"
+                            value="avi"
+                        />
+                        <label class="form-check-label" for="format-avi">
+                            avi
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between mt-5">
+                <button id="extract-audio" class="btn btn-primary">
+                    Extract Audio
+                </button>
+                <button id="extract-video" class="btn btn-primary">
+                    Extract Video
+                </button>
+                <button id="convert" class="btn btn-primary">Convert</button>
+            </div>
+        </div>
+        <script src="dist/js/renderer.js"></script>
+    </body>
+</html>

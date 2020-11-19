@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="dist/css/bootstrap.min.css" />
+        <title></title>
+    </head>
+    <body>
+        <div
+            class="d-flex flex-column justify-content-center align-items-center"
+            style="height: 100vh"
+        >
+            <h3 class="text-center">Processing ...</h3>
+            <div class="p-4">
+                <div class="progress" style="width: 400px">
+                    <div
+                        class="progress-bar"
+                        id="progress"
+                        role="progressbar"
+                        style="width: 0%"
+                        aria-valuenow="25"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                    >
+                        0%
+                    </div>
+                </div>
+                <h4 class="text-center text-success mt-3" style="display: none">
+                    Done!
+                </h4>
+            </div>
+            <button
+                class="btn btn-primary mt-3"
+                id="close"
+                style="display: none"
+            >
+                Close
+            </button>
+            <button class="btn btn-danger mt-3" id="cancel">Cancel</button>
+        </div>
+
+        <script>
+            const { ipcRenderer } = require('electron');
+            const progress = document.getElementById('progress');
+            const btnClose = document.getElementById('close');
+            const btnCancel = document.getElementById('cancel');
+            ipcRenderer.on('send-progress', function (error, prg) {
+                progress.style = `width: ${prg}%`;
+                progress.innerHTML = `${prg} %`;
+                if (prg == '100') {
+                    document.querySelector('h4').style.display = 'block';
+                    btnCancel.style.display = 'none';
+                    btnClose.style.display = 'block';
+                }
+            });
+
+            btnCancel.addEventListener('click', function () {
+                ipcRenderer.send('cancel');
+            });
+
+            btnClose.addEventListener('click', function () {
+                ipcRenderer.send('close-popup');
+            });
+        </script>
+    </body>
+</html>
