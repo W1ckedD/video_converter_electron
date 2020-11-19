@@ -1,5 +1,6 @@
-# A simple video converter app that can change video formats and video and audio codecs and extract audio from a clip and changing the audio volume
+# A simple video converter app
 
+## The app can change video formats and video and audio codecs and extract audio from a clip while changing the audio volume
 ## Created using electron and ffmpeg
 
 ### Installation
